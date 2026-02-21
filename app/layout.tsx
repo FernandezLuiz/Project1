@@ -1,3 +1,9 @@
+ import { Inter } from "next/font/google"
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+})
  import { AppToaster } from "@/components/ui/toast"
 import GlobalNavbar from "@/components/GlobalNavbar"
 import Footer from "@/components/Footer"

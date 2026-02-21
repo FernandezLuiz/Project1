@@ -40,7 +40,7 @@ export default function Project3Page() {
       {/* PDF links */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <a
-          href="/fotos/visual/poster.pdf"
+          href="/fotos/visual/poster.png"
           target="_blank"
           rel="noreferrer"
           className="border rounded-xl p-6 hover:bg-gray-50 transition"
