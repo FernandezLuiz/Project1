@@ -7,6 +7,7 @@ const inter = Inter({
  import { AppToaster } from "@/components/ui/toast"
 import GlobalNavbar from "@/components/GlobalNavbar"
 import Footer from "@/components/Footer"
+import PageTransition from "@/components/PageTransition"
 
 import Script from "next/script"
 import GoogleAnalyticsTracker from "@/components/GoogleAnalyticsTracker"
@@ -40,19 +41,22 @@ export default function RootLayout({
         </Script>
       </head>
 
-      <body>
-        {/* Google Analytics page view tracker */}
+<body className={inter.className}>
+          {/* Google Analytics page view tracker */}
         <GoogleAnalyticsTracker />
 
         <GlobalNavbar />
 
-        <div className="p-20 mx-auto mt-10">
-          {children}
-        </div>
+        <div className="mx-auto max-w-6xl px-4 md:px-6 pt-10 pb-24">
+  {children}
+  <div className="p-20 mx-auto mt-10">
+  <PageTransition>
+    {children}
+  </PageTransition>
+</div>
+</div>
 
-        <div className="fixed bottom-0 left-0 right-0">
-          <Footer />
-        </div>
+<Footer />
 
         <AppToaster />
       </body>
