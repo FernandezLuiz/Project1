@@ -112,17 +112,18 @@ export default function Project3Page() {
 
       </section>
 
-      {/* NAVIGATION ONDERAAN */}
-      <footer className="mt-40 pt-12 border-t border-zinc-200 flex justify-between items-center mb-12">
-        <a href="/project2" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-400 hover:text-black">
-          <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-black transition-all"></span>
-          Previous Case
-        </a>
-        <a href="/contact" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold">
-          Start a project
-          <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-black transition-all"></span>
-        </a>
-      </footer>
+    {/* NAVIGATION ONDERAAN PROJECT 3 */}
+<footer className="mt-40 pt-12 border-t border-zinc-200 flex justify-between items-center mb-12">
+  <a href="/project2" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-400 hover:text-black">
+    <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-black transition-all"></span>
+    Previous Case
+  </a>
+  {/* Link nu naar Project 4 in plaats van Contact */}
+  <a href="/project4" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold">
+    Next Project
+    <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-black transition-all"></span>
+  </a>
+</footer>
     </div>
   );
 }
