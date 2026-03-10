@@ -1,87 +1,105 @@
-"use client"
+'use client';
 
-import { useState } from "react"
-import PDFModal from "../../components/PDFModalTemp"
+import { motion } from "framer-motion"
 
 export default function Project2Page() {
-  const [open, setOpen] = useState(false)
-  const [activePdf, setActivePdf] = useState<{ src: string; title: string } | null>(null)
+  const tags = ["Branding", "Copywriting", "Concept"];
 
-  const openPdf = (src: string, title: string) => {
-    setActivePdf({ src, title })
-    setOpen(true)
-  }
-
-  const closePdf = () => {
-    setOpen(false)
-    setActivePdf(null)
-  }
+  const pdfs = [
+    { src: "/fotos/brand/a2key-copy.pdf", title: "KeyVisual Design", label: "01 / Branding" },
+    { src: "/fotos/brand/yesyoucan-copy.pdf", title: "YesYouCan Packaging", label: "02 / Case Study" }
+  ];
 
   return (
-    <div className="space-y-12">
-      {/* Hero */}
-      <section className="relative overflow-hidden rounded-3xl border bg-gradient-to-b from-white to-gray-50">
-        <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_20%_20%,rgba(0,0,0,0.08),transparent_55%)]" />
-        <div className="relative p-8 md:p-12 space-y-4">
-          <div className="flex flex-wrap gap-2">
-            {["Branding", "Copywriting", "Concept"].map((t) => (
-              <span key={t} className="rounded-full border bg-white px-3 py-1 text-xs">
-                {t}
-              </span>
-            ))}
+    <div className="min-h-screen p-8 md:p-20 max-w-[1600px] mx-auto text-[#131313]">
+      
+      {/* HEADER / TAGS */}
+      <header className="flex justify-between items-start w-full border-b border-zinc-200 pb-8 mt-12 mb-20">
+        <div className="flex flex-wrap gap-4">
+          {tags.map((t) => (
+            <span key={t} className="text-[10px] uppercase tracking-[0.3em] font-bold text-zinc-400">
+              {t}
+            </span>
+          ))}
+        </div>
+        <div className="text-[10px] uppercase tracking-[0.5em] font-bold text-zinc-400 text-right font-serif italic">
+          Project 02 <br /> Brand Identity
+        </div>
+      </header>
+
+      <main className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-32">
+        <div className="md:col-span-7">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-[10vw] md:text-[8vw] font-light leading-[0.85] tracking-tighter mb-12"
+          >
+            YesYou<span className="italic font-serif text-indigo-600">Can</span>
+          </motion.h1>
+
+          <div className="max-w-xl">
+            <p className="text-2xl font-light leading-snug text-zinc-500 mb-8 italic font-serif">
+              "Een IPA 0.0% concept dat de focus legt op lifestyle en smaak zonder compromissen."
+            </p>
           </div>
-
-          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
-            Brand Project
-          </h1>
-
-          <p className="text-gray-600 max-w-3xl text-base md:text-lg leading-relaxed">
-            Dit project ging over een blik ontwerpen, ik heb ervoor gekozen om een IPA 0.0% te ontwerpen, hieronder zie mijn keyvisual en mijn ontwerp. 
-          </p>
         </div>
-      </section>
+      </main>
 
-      {/* Files */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold tracking-tight">Bestanden</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <button
-            type="button"
-            onClick={() => openPdf("/fotos/brand/a2key-copy.pdf", "A2Key – Copy")}
-            className="group text-left rounded-2xl border bg-white p-6 shadow-sm hover:shadow-md transition"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <h3 className="text-xl font-semibold">KeyVisual</h3>
-                <p className="text-gray-600 mt-2">Klik om te openen in modal</p>
-              </div>
-              <span className="rounded-xl border px-3 py-1 text-xs text-gray-700 group-hover:bg-gray-50">
-                PDF
-              </span>
-            </div>
-          </button>
+      {/* PDF COMPACT VIEW SECTIE */}
+{/* PDF SECTIE MET VERSCHILLENDE FORMATEN */}
+<section className="space-y-40">
+  {pdfs.map((pdf, index) => (
+    <div key={index} className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+      
+      {/* INFO LINKS (Sticky) */}
+      <div className="md:col-span-4 sticky top-32">
+        <span className="text-[10px] font-bold text-indigo-600 tracking-[0.3em] uppercase">{pdf.label}</span>
+        <h2 className="text-4xl font-light tracking-tighter mt-4 mb-8 leading-tight">{pdf.title}</h2>
+        <p className="text-zinc-400 text-sm font-light mb-10 leading-relaxed max-w-xs">
+          Dit onderdeel van het project focust op de visuele vertaling van het merkconcept naar een tastbaar medium.
+        </p>
+        <a 
+          href={pdf.src} 
+          target="_blank"
+          className="inline-block text-[10px] uppercase tracking-widest font-bold border border-zinc-200 px-8 py-4 rounded-full hover:bg-black hover:text-white transition-all duration-500"
+        >
+          View Full Size
+        </a>
+      </div>
 
-          <button
-            type="button"
-            onClick={() => openPdf("/fotos/brand/yesyoucan-copy.pdf", "YesYouCan – Copy")}
-            className="group text-left rounded-2xl border bg-white p-6 shadow-sm hover:shadow-md transition"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <h3 className="text-xl font-semibold">YesYouCan </h3>
-                <p className="text-gray-600 mt-2">Klik om te openen in modal</p>
-              </div>
-              <span className="rounded-xl border px-3 py-1 text-xs text-gray-700 group-hover:bg-gray-50">
-                PDF
-              </span>
-            </div>
-          </button>
+      {/* PDF PREVIEW RECHTS */}
+      <div className="md:col-span-8">
+        <div 
+          className={`w-full bg-white rounded-sm overflow-hidden border border-zinc-100 shadow-sm relative 
+            ${index === 0 ? 'aspect-[1/1.4] h-auto' : 'aspect-[4/3] h-auto'}`}
+        >
+          {/* We gebruiken index === 0 om de KeyVisual (poster-formaat) hoog te maken */}
+          <iframe 
+            src={`${pdf.src}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`} 
+            className="absolute inset-0 w-full h-full border-none"
+            style={{ pointerEvents: 'none' }} 
+            title={pdf.title}
+          />
+          {/* Transparante overlay om scrollen IN de pdf te blokkeren, zodat je de PAGINA scrolt */}
+          <div className="absolute inset-0 z-10 bg-transparent"></div> 
         </div>
-      </section>
+      </div>
 
-      {activePdf && (
-        <PDFModal open={open} onClose={closePdf} src={activePdf.src} title={activePdf.title} />
-      )}
+    </div>
+  ))}
+</section>
+
+      {/* NAVIGATION ONDERAAN */}
+      <footer className="mt-40 pt-12 border-t border-zinc-200 flex justify-between items-center mb-12">
+        <a href="/project1" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-400 hover:text-black">
+          <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-black transition-all"></span>
+          Previous Case
+        </a>
+        <a href="/project3" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold">
+          Next Project
+          <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-black transition-all"></span>
+        </a>
+      </footer>
     </div>
   )
 }
