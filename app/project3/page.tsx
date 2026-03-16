@@ -9,7 +9,7 @@ export default function Project3Page() {
   return (
     <div className="min-h-screen p-8 md:p-20 max-w-[1600px] mx-auto text-[#131313]">
       
-      {/* HEADER / TAGS */}
+      {/* HEADER / TAGS - NU ALS PROJECT 01 */}
       <header className="flex justify-between items-start w-full border-b border-zinc-200 pb-8 mt-12 mb-20">
         <div className="flex flex-wrap gap-4">
           {tags.map((t) => (
@@ -19,7 +19,7 @@ export default function Project3Page() {
           ))}
         </div>
         <div className="text-[10px] uppercase tracking-[0.5em] font-bold text-zinc-400 text-right font-serif italic">
-          Project 03 <br /> CineCity Festival
+          Project 01 <br /> CineCity Filmfestival
         </div>
       </header>
 
@@ -40,8 +40,8 @@ export default function Project3Page() {
               "Een nachtelijk filmfestival dat de architectuur van de stad gebruikt als canvas."
             </p>
             <p className="text-lg font-light text-zinc-400 leading-relaxed mb-8">
-              Focus op sfeer, hoog contrast en gedurfde typografie. Dit project omvat een volledige visuele identiteit, 
-              van fysieke posters tot een interactieve web-experience.
+              Een volledige visuele identiteit waarbij de focus ligt op sfeer en typografische hiërarchie. 
+              Ontwikkeld voor zowel fysieke uitingen als een interactieve digitale ervaring.
             </p>
             
             <a
@@ -57,9 +57,9 @@ export default function Project3Page() {
 
         {/* EXTRA INFO RECHTS */}
         <div className="md:col-span-5 pt-12 md:pt-48 border-l border-zinc-100 pl-12">
-          <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-zinc-300 mb-4">The Vibe</p>
-          <p className="text-xl font-light text-zinc-600 mb-12">
-            Noir-esthetiek, stedelijke sfeer en typografische hiërarchie.
+          <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-zinc-300 mb-4">The Identity</p>
+          <p className="text-xl font-light text-zinc-600 mb-12 italic font-serif">
+            Noir-esthetiek en stedelijke ritmiek.
           </p>
         </div>
       </main>
@@ -67,60 +67,79 @@ export default function Project3Page() {
       {/* VISUALS SECTIE */}
       <section className="space-y-40">
         
-        {/* WEBSITE PREVIEW */}
-        <div className="space-y-8">
-          <div className="flex justify-between items-end border-b border-zinc-100 pb-4">
-            <h2 className="text-[10px] uppercase tracking-[0.5em] font-bold text-zinc-400">01 / Digital Interface</h2>
+        {/* 01. OPENING TITLE & WEB PREVIEW */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+          <div className="md:col-span-8 space-y-8">
+            <div className="flex justify-between items-end border-b border-zinc-100 pb-4">
+              <h2 className="text-[10px] uppercase tracking-[0.5em] font-bold text-zinc-400">01 / Opening Title (Motion)</h2>
+            </div>
+            <div className="bg-black aspect-video rounded-sm overflow-hidden shadow-2xl relative">
+              <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+                <source src="/fotos/visual/OpeningTitle.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
-          <div className="bg-[#0a0a0a] p-4 md:p-12 rounded-sm shadow-2xl">
-            <ImageModal src="/fotos/visual/preview.png" alt="CineCity website preview" />
+          <div className="md:col-span-4 space-y-8">
+            <div className="flex justify-between items-end border-b border-zinc-100 pb-4">
+              <h2 className="text-[10px] uppercase tracking-[0.5em] font-bold text-zinc-400">Website Interface</h2>
+            </div>
+            <div className="bg-[#0a0a0a] p-4 rounded-sm shadow-xl">
+              <ImageModal src="/fotos/visual/preview.png" alt="CineCity website preview" />
+            </div>
           </div>
         </div>
 
-        {/* POSTER & PDF GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+        {/* 02. DE PDF MOCKUPS GRID */}
+        <div className="space-y-32">
           
-          {/* POSTER (Groot en staand) */}
-          <div className="md:col-span-6 space-y-8">
-            <div className="border-b border-zinc-100 pb-4">
-              <h2 className="text-[10px] uppercase tracking-[0.5em] font-bold text-zinc-400">02 / Official Poster</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="space-y-4">
+              <p className="text-[10px] uppercase tracking-widest text-zinc-300">Brand Key Visual</p>
+              <div className="aspect-[4/3] bg-white border border-zinc-100 shadow-md relative overflow-hidden">
+                <iframe src="/fotos/visual/mockupKEY.pdf#toolbar=0&navpanes=0&scrollbar=0" className="absolute inset-0 w-full h-full border-none" />
+              </div>
             </div>
-            <div className="shadow-lg border border-zinc-100">
-              <ImageModal src="/fotos/visual/poster.png" alt="CineCity poster" />
+            <div className="space-y-4">
+              <p className="text-[10px] uppercase tracking-widest text-zinc-300">Festival Brochure</p>
+              <div className="aspect-[4/3] bg-white border border-zinc-100 shadow-md relative overflow-hidden">
+                <iframe src="/fotos/visual/mockupBROCH.pdf#toolbar=0&navpanes=0&scrollbar=0" className="absolute inset-0 w-full h-full border-none" />
+              </div>
             </div>
           </div>
 
-          {/* EXTRA VISUALS PDF */}
-          <div className="md:col-span-6 space-y-8">
-            <div className="border-b border-zinc-100 pb-4">
-              <h2 className="text-[10px] uppercase tracking-[0.5em] font-bold text-zinc-400">03 / Visual Assets (PDF)</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="space-y-4">
+              <p className="text-[10px] uppercase tracking-widest text-zinc-300">Campaign Posters</p>
+              <div className="aspect-[4/3] bg-white border border-zinc-100 shadow-md relative overflow-hidden">
+                <iframe src="/fotos/visual/mockupREEKS.pdf#toolbar=0&navpanes=0&scrollbar=0" className="absolute inset-0 w-full h-full border-none" />
+              </div>
             </div>
-            <div className="aspect-[1/1.4] w-full bg-white rounded-sm overflow-hidden border border-zinc-100 shadow-sm relative group">
-              <iframe 
-                src="/fotos/visual/visuals.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
-                className="absolute inset-0 w-full h-full border-none"
-                style={{ pointerEvents: 'none' }} 
-                title="Extra Visuals"
-              />
-              <div className="absolute inset-0 z-10 bg-transparent"></div> 
+            <div className="space-y-4">
+              <p className="text-[10px] uppercase tracking-widest text-zinc-300">Outdoor Advertising (Bus)</p>
+              <div className="aspect-[4/3] bg-white border border-zinc-100 shadow-md relative overflow-hidden">
+                <iframe src="/fotos/visual/busmockup.pdf#toolbar=0&navpanes=0&scrollbar=0" className="absolute inset-0 w-full h-full border-none" />
+              </div>
             </div>
-            <div className="flex justify-end">
-                <a href="/fotos/visual/visuals.pdf" target="_blank" className="text-[10px] font-bold uppercase tracking-widest underline underline-offset-4">Open PDF Details</a>
-            </div>
+          </div>
+
+          <div className="space-y-4">
+              <p className="text-[10px] uppercase tracking-widest text-zinc-300">Digital Ecosystem Mockup</p>
+              <div className="aspect-[21/9] bg-white border border-zinc-100 shadow-md relative overflow-hidden">
+                <iframe src="/fotos/visual/mockupWEB.pdf#toolbar=0&navpanes=0&scrollbar=0" className="absolute inset-0 w-full h-full border-none" />
+              </div>
           </div>
         </div>
 
       </section>
 
-      {/* NAVIGATION ONDERAAN */}
+      {/* FOOTER NAV - LOGISCHE VOLGORDE */}
       <footer className="mt-40 pt-12 border-t border-zinc-200 flex justify-between items-center mb-12">
-        <a href="/project2" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-400 hover:text-black">
-          <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-black transition-all"></span>
-          Previous Case
-        </a>
-        <a href="/contact" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold">
-          Start a project
-          <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-black transition-all"></span>
+        <div className="text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-200">
+          First Project
+        </div>
+        <a href="/project1" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold hover:text-indigo-600 transition-colors">
+          Next: Blender Atlantis
+          <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-indigo-600 transition-all"></span>
         </a>
       </footer>
     </div>

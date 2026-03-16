@@ -1,14 +1,10 @@
 'use client';
 
 import { motion } from "framer-motion"
+import ImageModal from "../../components/ImageModal";
 
 export default function Project2Page() {
   const tags = ["Branding", "Copywriting", "Concept"];
-
-  const pdfs = [
-    { src: "/fotos/brand/a2key-copy.pdf", title: "KeyVisual Design", label: "01 / Branding" },
-    { src: "/fotos/brand/yesyoucan-copy.pdf", title: "YesYouCan Packaging", label: "02 / Case Study" }
-  ];
 
   return (
     <div className="min-h-screen p-8 md:p-20 max-w-[1600px] mx-auto text-[#131313]">
@@ -45,59 +41,83 @@ export default function Project2Page() {
         </div>
       </main>
 
-      {/* PDF COMPACT VIEW SECTIE */}
-{/* PDF SECTIE MET VERSCHILLENDE FORMATEN */}
-<section className="space-y-40">
-  {pdfs.map((pdf, index) => (
-    <div key={index} className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
-      
-      {/* INFO LINKS (Sticky) */}
-      <div className="md:col-span-4 sticky top-32">
-        <span className="text-[10px] font-bold text-indigo-600 tracking-[0.3em] uppercase">{pdf.label}</span>
-        <h2 className="text-4xl font-light tracking-tighter mt-4 mb-8 leading-tight">{pdf.title}</h2>
-        <p className="text-zinc-400 text-sm font-light mb-10 leading-relaxed max-w-xs">
-          Dit onderdeel van het project focust op de visuele vertaling van het merkconcept naar een tastbaar medium.
-        </p>
-        <a 
-          href={pdf.src} 
-          target="_blank"
-          className="inline-block text-[10px] uppercase tracking-widest font-bold border border-zinc-200 px-8 py-4 rounded-full hover:bg-black hover:text-white transition-all duration-500"
-        >
-          View Full Size
-        </a>
-      </div>
-
-      {/* PDF PREVIEW RECHTS */}
-      <div className="md:col-span-8">
-        <div 
-          className={`w-full bg-white rounded-sm overflow-hidden border border-zinc-100 shadow-sm relative 
-            ${index === 0 ? 'aspect-[1/1.4] h-auto' : 'aspect-[4/3] h-auto'}`}
-        >
-          {/* We gebruiken index === 0 om de KeyVisual (poster-formaat) hoog te maken */}
-          <iframe 
-            src={`${pdf.src}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`} 
-            className="absolute inset-0 w-full h-full border-none"
-            style={{ pointerEvents: 'none' }} 
-            title={pdf.title}
-          />
-          {/* Transparante overlay om scrollen IN de pdf te blokkeren, zodat je de PAGINA scrolt */}
-          <div className="absolute inset-0 z-10 bg-transparent"></div> 
+      {/* VISUALS SECTIE */}
+      <section className="space-y-32">
+        
+        {/* 01. KEY VISUAL (A2) - Kleiner gemaakt in een grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+            <div className="md:col-span-5 space-y-6">
+                <span className="text-[10px] font-bold text-indigo-600 tracking-[0.3em] uppercase font-sans">01 / Visual Identity</span>
+                <h2 className="text-4xl font-light tracking-tighter leading-tight">Brand Key Visual</h2>
+                <p className="text-zinc-400 text-sm font-light leading-relaxed max-w-xs">
+                    De visuele vertaling van het merkconcept. Krachtig, modern en fris.
+                </p>
+            </div>
+            {/* Hier is de A2 visual kleiner (col-span-7 ipv volledige breedte) */}
+            <div className="md:col-span-7">
+                <div className="aspect-[1/1.4] w-full max-w-md mx-auto bg-white shadow-2xl border border-zinc-100 relative overflow-hidden">
+                    <iframe 
+                        src="/fotos/brand/a2key-copy.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
+                        className="absolute inset-0 w-full h-full border-none"
+                    />
+                </div>
+            </div>
         </div>
-      </div>
 
-    </div>
-  ))}
-</section>
+        {/* 02. NIEUWE MOCKUPS GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+                <p className="text-[10px] uppercase tracking-widest text-zinc-300 font-sans">Product Mockup</p>
+                <div className="aspect-square bg-zinc-50 flex items-center justify-center overflow-hidden border border-zinc-100">
+                    <ImageModal src="/fotos/brand/mocjkup.jpg" alt="YesYouCan Mockup" />
+                </div>
+            </div>
+            <div className="space-y-4">
+                <p className="text-[10px] uppercase tracking-widest text-zinc-300 font-sans">Social Media Style</p>
+                <div className="aspect-square bg-zinc-50 flex items-center justify-center overflow-hidden border border-zinc-100">
+                    <ImageModal src="/fotos/brand/instamockup.png" alt="Instagram Mockup" />
+                </div>
+            </div>
+        </div>
+
+        {/* 03. BRAND MOCKUP PDF (Full width) */}
+        <div className="space-y-8">
+            <div className="border-b border-zinc-100 pb-4">
+                <h2 className="text-[10px] uppercase tracking-[0.5em] font-bold text-zinc-400">02 / Branding Assets</h2>
+            </div>
+            <div className="aspect-video w-full bg-white shadow-lg border border-zinc-100 relative overflow-hidden">
+                <iframe 
+                    src="/fotos/brand/mockup.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
+                    className="absolute inset-0 w-full h-full border-none"
+                />
+            </div>
+        </div>
+
+        {/* 04. CASE STUDY PDF (Helemaal onderaan) */}
+        <div className="space-y-8 pt-20">
+            <div className="flex justify-between items-end border-b border-zinc-100 pb-4">
+                <h2 className="text-[10px] uppercase tracking-[0.5em] font-bold text-zinc-400">03 / Full Case Study</h2>
+                <a href="/fotos/brand/yesyoucan-copy.pdf" target="_blank" className="text-[10px] font-bold underline">Download PDF</a>
+            </div>
+            <div className="aspect-[4/3] w-full bg-white shadow-sm border border-zinc-100 relative overflow-hidden">
+                <iframe 
+                    src="/fotos/brand/yesyoucan-copy.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
+                    className="absolute inset-0 w-full h-full border-none"
+                />
+            </div>
+        </div>
+
+      </section>
 
       {/* NAVIGATION ONDERAAN */}
       <footer className="mt-40 pt-12 border-t border-zinc-200 flex justify-between items-center mb-12">
-        <a href="/project1" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-400 hover:text-black">
+        <a href="/project3" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-400 hover:text-black">
           <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-black transition-all"></span>
-          Previous Case
+          Previous: CineCity
         </a>
-        <a href="/project3" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold">
-          Next Project
-          <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-black transition-all"></span>
+        <a href="/project1" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold hover:text-indigo-600">
+          Next: Blender Atlantis
+          <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-indigo-600 transition-all"></span>
         </a>
       </footer>
     </div>
