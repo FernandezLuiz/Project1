@@ -53,11 +53,28 @@ export default function Project1Page() {
           </div>
         </div>
 
-        <div className="md:col-span-5 pt-8 md:pt-48 border-t md:border-t-0 md:border-l border-zinc-100 md:pl-12">
-          <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-zinc-300 mb-4">The Identity</p>
-          <p className="text-lg md:text-xl font-light text-zinc-600 mb-6 md:mb-12 italic font-serif">
-            Noir-esthetiek en stedelijke ritmiek.
-          </p>
+        {/* RECHTERKOLOM: Items-start zorgt dat alles weer strak links uitlijnt */}
+        <div className="md:col-span-5 pt-8 md:pt-16 border-t md:border-t-0 md:border-l border-zinc-100 md:pl-12 flex flex-col justify-start items-start">
+          
+          {/* EERST DE TEKST: Nu mooi bovenaan de kolom */}
+          <div className="w-full text-left mb-8">
+            <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-zinc-300 mb-4">The Identity</p>
+            <p className="text-lg md:text-xl font-light text-zinc-600 italic font-serif">
+              Noir-esthetiek en stedelijke ritmiek.
+            </p>
+          </div>
+
+          {/* DE KNOP: Nu indigo-blauw met witte tekst, zodat hij beter opvalt. */}
+          <div className="mt-4">
+            <a 
+              href="/project2" 
+              className="group inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-white bg-indigo-600 border border-indigo-700 px-6 py-3 rounded-full hover:bg-white hover:text-indigo-600 hover:border-indigo-100 transition-all duration-500 shadow-sm"
+            >
+              Go to next project
+              <span className="w-6 h-[1px] bg-white group-hover:w-10 group-hover:bg-indigo-300 transition-all"></span>
+            </a>
+          </div>
+
         </div>
       </main>
 
@@ -117,7 +134,7 @@ export default function Project1Page() {
             </div>
           </div>
 
-          {/* FULL WIDTH MOCKUP - Gefixed met brute force CSS breedte */}
+          {/* FULL WIDTH MOCKUP */}
           <div className="space-y-4">
             <p className="text-[10px] uppercase tracking-widest text-zinc-300">Digital Ecosystem Mockup</p>
             <div className="w-full shadow-2xl rounded-sm overflow-hidden bg-white [&_img]:w-full [&_img]:h-auto">
@@ -127,13 +144,11 @@ export default function Project1Page() {
         </div>
       </section>
 
-      {/* FOOTER NAV */}
+      {/* PROPERE CLEAN FOOTER */}
       <footer className="mt-40 pt-12 border-t border-zinc-200 flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
-        <div className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-200">First Project</div>
-        <a href="/project2" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold hover:text-indigo-600 transition-colors">
-          Next: YesYouCan
-          <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-indigo-600 transition-all"></span>
-        </a>
+        <div className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-300">
+          Portfolio 2026 — Luiz Fernandez
+        </div>
       </footer>
     </div>
   );

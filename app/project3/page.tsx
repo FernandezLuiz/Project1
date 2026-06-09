@@ -39,7 +39,7 @@ export default function Project3Page() {
 
           <div className="max-w-xl">
             <p className="text-2xl font-light leading-snug text-zinc-500 mb-8 italic font-serif">
-              "AquaGroove — Een verkenning van vorm, licht en atmosfeer in een fictieve onderwaterwereld."
+              "AquaGroove — Een verkenning van vorm, licht smokes en atmosfeer in een fictieve onderwaterwereld."
             </p>
             <p className="text-lg font-light text-zinc-400 leading-relaxed">
               Voor dit project ontwierp ik een onderwaterclub in de stad Atlantis. De focus lag op het creëren van een unieke sfeer 
@@ -48,13 +48,27 @@ export default function Project3Page() {
           </div>
         </div>
 
-        {/* EXTRA INFO RECHTS */}
-        <div className="md:col-span-5 pt-12 md:pt-48 border-l border-zinc-100 pl-12">
-          <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-zinc-300 mb-4">Focus</p>
-          <p className="text-xl font-light text-zinc-600 mb-12">
-            Atmosferische rendering, volumetrische belichting en world-building.
-          </p>
-          <div className="w-12 h-[1px] bg-indigo-600"></div>
+        {/* EXTRA INFO RECHTS: Nu met de opvallende Next Project knop onder de tekst */}
+        <div className="md:col-span-5 pt-12 md:pt-16 border-t md:border-t-0 md:border-l border-zinc-100 pl-12 flex flex-col justify-start items-start">
+          
+          {/* INTRO TEKST */}
+          <div className="w-full text-left mb-8">
+            <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-zinc-300 mb-4">Focus</p>
+            <p className="text-xl font-light text-zinc-600">
+              Atmosferische rendering, volumetrische belichting en world-building.
+            </p>
+          </div>
+
+          {/* DE KNOP: Opvallend indigo met witte tekst, verandert naar wit bij hover */}
+          <div className="mt-4">
+            <a 
+              href="/project4" 
+              className="group inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-white bg-indigo-600 border border-indigo-700 px-6 py-3 rounded-full hover:bg-white hover:text-indigo-600 hover:border-indigo-100 transition-all duration-500 shadow-sm"
+            >
+              Go to next project
+              <span className="w-6 h-[1px] bg-white group-hover:w-10 group-hover:bg-indigo-300 transition-all"></span>
+            </a>
+          </div>
         </div>
       </main>
 
@@ -82,16 +96,11 @@ export default function Project3Page() {
         </div>
       </section>
 
-      {/* NAVIGATION ONDERAAN - NU LOGISCH GEKOPPELD */}
-      <footer className="mt-40 pt-12 border-t border-zinc-200 flex justify-between items-center mb-12">
-        <a href="/project2" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-400 hover:text-black transition-all">
-          <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-black transition-all"></span>
-          Previous: YesYouCan
-        </a>
-        <a href="/project4" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold hover:text-indigo-600 transition-all">
-          Next: Nike Air Max
-          <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-indigo-600 transition-all"></span>
-        </a>
+      {/* PROPERE CLEAN FOOTER */}
+      <footer className="mt-40 pt-12 border-t border-zinc-200 flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
+        <div className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-300">
+          Portfolio 2026 — Luiz Fernandez
+        </div>
       </footer>
     </div>
   );

@@ -39,6 +39,30 @@ export default function Project2Page() {
             </p>
           </div>
         </div>
+
+        {/* RECHTERKOLOM: Met de opvallende Next Project knop onder de tekst */}
+        <div className="md:col-span-5 pt-8 md:pt-16 border-t md:border-t-0 md:border-l border-zinc-100 md:pl-12 flex flex-col justify-start items-start">
+          
+          {/* INTRO TEKST */}
+          <div className="w-full text-left mb-8">
+            <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-zinc-300 mb-4">The Concept</p>
+            <p className="text-lg md:text-xl font-light text-zinc-600 italic font-serif">
+              Krachtig, modern en fris design.
+            </p>
+          </div>
+
+          {/* DE KNOP: Opvallend indigo met witte tekst, verandert naar wit bij hover */}
+          <div className="mt-4">
+            <a 
+              href="/project3" 
+              className="group inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-white bg-indigo-600 border border-indigo-700 px-6 py-3 rounded-full hover:bg-white hover:text-indigo-600 hover:border-indigo-100 transition-all duration-500 shadow-sm"
+            >
+              Go to next project
+              <span className="w-6 h-[1px] bg-white group-hover:w-10 group-hover:bg-indigo-300 transition-all"></span>
+            </a>
+          </div>
+
+        </div>
       </main>
 
       {/* VISUALS SECTIE */}
@@ -111,16 +135,12 @@ export default function Project2Page() {
         </div>
 
       </section>
-      {/* NAVIGATION ONDERAAN */}
-      <footer className="mt-40 pt-12 border-t border-zinc-200 flex flex-col md:flex-row justify-between items-center mb-12 gap-8">
-        <a href="/project1" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-400 hover:text-black transition-all">
-          <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-black transition-all"></span>
-          Previous: CineCity
-        </a>
-        <a href="/project3" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold hover:text-indigo-600 transition-all">
-          Next: Blender Atlantis
-          <span className="w-10 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-indigo-600 transition-all"></span>
-        </a>
+
+      {/* PROPERE CLEAN FOOTER (Matcht met Project 1) */}
+      <footer className="mt-40 pt-12 border-t border-zinc-200 flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
+        <div className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-300">
+          Portfolio 2026 — Luiz Fernandez
+        </div>
       </footer>
     </div>
   )
