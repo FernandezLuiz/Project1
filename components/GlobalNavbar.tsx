@@ -27,6 +27,15 @@ export default function GlobalNavbar() {
 
   return (
     <>
+
+<Link
+  href="/home"
+  className="fixed top-6 left-6 md:top-8 md:left-8 z-[1000] text-[10px] uppercase tracking-[0.4em] font-bold text-zinc-500 hover:text-indigo-600 transition-colors"
+>
+  Home
+</Link>
+
+
       {/* TRIGGER KNOP - Hogere Z-index dan de rest van de site */}
       <nav className="fixed top-6 right-6 md:top-8 md:right-8 z-[1000]">
         <button 
@@ -97,7 +106,25 @@ export default function GlobalNavbar() {
 
               {/* KOLOM 2: PROJECTS */}
               <div className="md:col-span-8 md:border-l border-zinc-100 md:pl-20 pb-20 md:pb-0">
-                <p className="text-[9px] uppercase tracking-[0.4em] font-bold text-zinc-300 mb-6">Selected Works</p>
+                <div className="mb-8 pl-12 md:pl-16">
+  <div className="flex items-end justify-between">
+    <div>
+      <p className="text-[9px] uppercase tracking-[0.4em] font-bold text-zinc-300 mb-2">
+        Selected Works
+      </p>
+
+      <h2 className="text-2xl md:text-4xl font-light tracking-tight text-zinc-900">
+        Portfolio Projects
+      </h2>
+    </div>
+
+    <span className="text-[9px] uppercase tracking-[0.35em] text-zinc-300 pb-1">
+      04 Projects
+    </span>
+  </div>
+
+  <div className="mt-4 h-[2px] w-full bg-indigo-600" />
+</div>
                 <div className="flex flex-col gap-6 md:gap-4">
                   {projects.map((project) => (
                     <Link 

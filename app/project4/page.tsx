@@ -58,6 +58,17 @@ export default function Project4Page() {
             </div>
           </div>
 
+           {/* DE KNOP: Opvallend indigo met witte tekst, verandert naar wit bij hover */}
+          <div className="mt-4">
+            <a 
+              href="/project1" 
+              className="group inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-white bg-indigo-600 border border-indigo-700 px-6 py-3 rounded-full hover:bg-white hover:text-indigo-600 hover:border-indigo-100 transition-all duration-500 shadow-sm"
+            >
+              Go to  project 1
+              <span className="w-6 h-[1px] bg-white group-hover:w-10 group-hover:bg-indigo-300 transition-all"></span>
+            </a>
+          </div>
+
           {/* DE FINAL KNOP: Royal blue met witte tekst om te matchen met de Nike-titel! */}
           <div className="mt-4">
             <a 
@@ -69,6 +80,8 @@ export default function Project4Page() {
             </a>
           </div>
         </div>
+
+        
       </main>
 
       {/* VIDEO SECTIE */}

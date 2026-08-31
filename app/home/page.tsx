@@ -12,7 +12,7 @@ export default function HomePage() {
         {/* HEADER INFO */}
         <div className="flex justify-between items-start w-full border-b border-zinc-200 pb-8 mt-12">
           <div className="text-[10px] uppercase tracking-[0.5em] font-bold text-zinc-400">
-            Portfolio — 2026
+            Visual Designer
           </div>
           <div className="text-[10px] uppercase tracking-[0.5em] font-bold text-zinc-400 text-right">
             User Research — Antwerp <br /> Creative & Data Driven
@@ -21,7 +21,20 @@ export default function HomePage() {
 
         {/* MAIN TITLE */}
         <main className="flex-grow flex flex-col justify-center my-20">
-          <motion.h1 
+          <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.2 }}
+  className="mb-6"
+>
+  <p className="text-[10px] md:text-xs uppercase tracking-[0.35em] font-bold text-zinc-500">
+    Luiz Fernandez — Portfolio
+  </p>
+
+  <p className="mt-2 text-sm md:text-base text-zinc-700">
+     User Research · Development
+  </p>
+</motion.div><motion.h1 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
@@ -53,17 +66,7 @@ export default function HomePage() {
             </a>
           </div>
 
-          {/* MIDDELSTE KOLOM: Dashboard-links staan nu weer rustig en clean opgesteld */}
-          <div className="md:col-span-4 flex flex-col gap-6 items-start">
-            <a href="/admin" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold hover:text-black">
-              <span className="w-8 h-[1px] bg-zinc-300 group-hover:w-16 group-hover:bg-black transition-all duration-700"></span>
-              Management Dashboard
-            </a>
-            <a href="/profile" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-400 hover:text-indigo-600">
-              <span className="w-8 h-[1px] bg-zinc-200 group-hover:w-16 group-hover:bg-indigo-600 transition-all duration-700"></span>
-              User Profile Settings
-            </a>
-          </div>
+          
 
           {/* RECHTERKOLOM: De live research box */}
           <div className="md:col-span-4">
